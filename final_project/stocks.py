@@ -12,7 +12,7 @@ def get_all_stocks():
 def get_stock_price(symbol):
     conn = get_connection()
     cursor = conn.cursor()
-    cursor.execute("SELECT price FROM stocks WHERE symbol = ?", (symbol,))
+    cursor.execute("SELECT price FROM stocks WHERE symbol = ?", (symbol))
     result = cursor.fetchone()
     conn.close()
     return result[0] if result else None
